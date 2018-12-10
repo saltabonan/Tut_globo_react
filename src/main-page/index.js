@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './main-page.css';
 import Header from './header';
+import FeaturedHouse from './featured-house';
 
 class App extends Component {
   state = {}
@@ -22,7 +23,7 @@ class App extends Component {
     if(this.allHouses){
       const randomIndex = Math.floor(Math.random() * this.allHouses.length);
       const featuredHouse = this.allHouses[randomIndex];
-      this.setState({ featuredHouse});
+      this.setState({featuredHouse});
     };
   }
 
@@ -30,6 +31,7 @@ class App extends Component {
     return (
       <div className="container">
         <Header subtitle="Providing houses all over the world"/>
+        <FeaturedHouse house={this.state.featuredHouse}/>
       </div>
     );
   }
